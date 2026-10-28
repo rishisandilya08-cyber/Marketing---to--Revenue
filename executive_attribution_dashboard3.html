@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Marketing Attribution & Revenue Bottleneck Dashboard</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Smooth tab switching and custom slider styling */
+    input[type=range] {
+      accent-color: #3b82f6;
+    }
+    .badge-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .6; }
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-4 md:p-6 min-h-screen">
+
+  <!-- ======================================================================= -->
+  <!-- HEADER & EXECUTIVE SUMMARY BANNER                                       -->
+  <!-- ======================================================================= -->
+  <header class="mb-6 bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-sm">
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-blue-500/10 text-blue-500 border border-blue-500/20">
+            ENTERPRISE REVENUE INTELLIGENCE
+          </span>
+          <span class="px-2.5 py-1 text-xs font-bold rounded-full bg-red-500/10 text-red-500 border border-red-500/20 badge-pulse">
+            CRITICAL BOTTLENECK DETECTED: 72H SDR SLA BREACH
+          </span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[var(--foreground)]">
+          Marketing-to-Revenue Attribution & Funnel Leakage Master Dashboard
+        </h1>
+        <p class="text-sm text-[var(--muted-foreground)] mt-1">
+          Root-cause diagnosis for <span class="font-semibold text-[var(--foreground)]">"High Lead Generation vs. Low Revenue Growth"</span> | Multi-Touch Attribution Engine (MTA) & Prescriptive Optimization
+        </p>
+      </div>
+
+      <!-- Quick Action Stats -->
+      <div class="flex items-center gap-3">
+        <div class="text-right">
+          <div class="text-xs text-[var(--muted-foreground)] font-medium">Reconstructed Journey Data</div>
+          <div class="text-sm font-bold text-[var(--foreground)]">1,000 Accounts | 7,569 Touchpoints</div>
+        </div>
+        <div class="h-8 w-[1px] bg-[var(--border)]"></div>
+        <div class="text-right">
+          <div class="text-xs text-[var(--muted-foreground)] font-medium">Recoverable Pipeline Potential</div>
+          <div class="text-sm font-extrabold text-emerald-500">+$2.22M ARR (+96.7%)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================= -->
+  <!-- TOP KPI CARDS RIBBON                                                    -->
+  <!-- ======================================================================= -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+    <!-- Card 1 -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+      <div class="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">Total Inbound Leads</div>
+      <div class="text-2xl font-black text-[var(--foreground)] mt-1">1,000</div>
+      <div class="text-xs text-blue-500 font-medium mt-1">535 MQLs (53.5%)</div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+      <div class="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">Total Pipeline Value</div>
+      <div class="text-2xl font-black text-[var(--foreground)] mt-1">$39.13M</div>
+      <div class="text-xs text-[var(--muted-foreground)] mt-1">$20.87M at MQL Gate</div>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+      <div class="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">Current Closed-Won</div>
+      <div class="text-2xl font-black text-emerald-500 mt-1">$2.21M</div>
+      <div class="text-xs text-[var(--muted-foreground)] mt-1">55 Deals (5.5% Conversion)</div>
+    </div>
+    <!-- Card 4 -->
+    <div class="bg-[var(--card)] border border-red-500/30 rounded-xl p-4 shadow-sm bg-red-500/5">
+      <div class="text-xs font-semibold text-red-500 uppercase tracking-wider">Lost at Gate 2 (SDR Lag)</div>
+      <div class="text-2xl font-black text-red-500 mt-1">$13.62M</div>
+      <div class="text-xs text-red-400 font-medium mt-1">357 MQLs Abandoned</div>
+    </div>
+    <!-- Card 5 -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4 shadow-sm">
+      <div class="text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">SLA Breached Ratio</div>
+      <div class="text-2xl font-black text-amber-500 mt-1">75.7%</div>
+      <div class="text-xs text-amber-500 font-medium mt-1">Avg 7.2 Days Latency</div>
+    </div>
+    <!-- Card 6 -->
+    <div class="bg-[var(--card)] border border-emerald-500/30 rounded-xl p-4 shadow-sm bg-emerald-500/5">
+      <div class="text-xs font-semibold text-emerald-500 uppercase tracking-wider">Target ARR (24h SLA)</div>
+      <div class="text-2xl font-black text-emerald-500 mt-1">$4.52M</div>
+      <div class="text-xs text-emerald-400 font-bold mt-1">+96.7% Growth Lever</div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- NAVIGATION TABS                                                         -->
+  <!-- ======================================================================= -->
+  <div class="flex items-center gap-2 border-b border-[var(--border)] pb-3 mb-6 overflow-x-auto">
+    <button onclick="switchTab('mta')" id="tab-btn-mta" class="px-4 py-2 text-sm font-bold rounded-lg bg-blue-600 text-white shadow-sm transition">
+      1. Multi-Touch Attribution (MTA)
+    </button>
+    <button onclick="switchTab('funnel')" id="tab-btn-funnel" class="px-4 py-2 text-sm font-semibold rounded-lg bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-[var(--border)] transition">
+      2. Funnel Leakage Waterfall
+    </button>
+    <button onclick="switchTab('diagnostics')" id="tab-btn-diagnostics" class="px-4 py-2 text-sm font-semibold rounded-lg bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-[var(--border)] transition">
+      3. The 72H SDR SLA Cliff & ML
+    </button>
+    <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="px-4 py-2 text-sm font-semibold rounded-lg bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-[var(--border)] transition">
+      4. Interactive Scenario Simulator
+    </button>
+    <button onclick="switchTab('actionplan')" id="tab-btn-actionplan" class="px-4 py-2 text-sm font-semibold rounded-lg bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-[var(--border)] transition">
+      5. Prescriptive 90-Day Plan
+    </button>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 1: MULTI-TOUCH ATTRIBUTION (MTA) COMPARISON                         -->
+  <!-- ======================================================================= -->
+  <div id="tab-mta" class="tab-pane space-y-6">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-lg font-bold text-[var(--foreground)]">Cross-Channel Multi-Touch Attribution Engine</h2>
+          <p class="text-sm text-[var(--muted-foreground)]">Compare First-Touch, Last-Touch, Linear, and Data-Driven W-Shaped (40-20-40) models to identify severe Last-Touch bias.</p>
+        </div>
+        <div class="flex items-center gap-2 bg-[var(--background)] p-1 rounded-lg border border-[var(--border)]">
+          <button onclick="setMtaMetric('roas')" id="btn-mta-roas" class="px-3 py-1.5 text-xs font-bold rounded-md bg-blue-600 text-white transition">ROAS View</button>
+          <button onclick="setMtaMetric('rev')" id="btn-mta-rev" class="px-3 py-1.5 text-xs font-semibold rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">Revenue ($) View</button>
+        </div>
+      </div>
+
+      <!-- MTA Interactive SVG Chart -->
+      <div class="overflow-x-auto">
+        <svg id="mta-svg" viewBox="0 0 800 320" class="w-full h-80"></svg>
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap items-center justify-center gap-6 mt-4 pt-4 border-t border-[var(--border)] text-xs font-semibold">
+        <div class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-blue-900"></span> First-Touch (FT)</div>
+        <div class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-blue-500"></span> Linear (Equal Split)</div>
+        <div class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-emerald-500"></span> W-Shaped (40-20-40 Recommended)</div>
+        <div class="flex items-center gap-2"><span class="w-3.5 h-3.5 rounded bg-red-500"></span> Last-Touch (LT)</div>
+      </div>
+    </div>
+
+    <!-- Attribution Table & Strategic Callouts -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm overflow-x-auto">
+        <h3 class="text-sm font-bold text-[var(--foreground)] mb-3 uppercase tracking-wider">Channel Performance Breakdown</h3>
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)]">
+              <th class="py-2.5 font-bold">Channel</th>
+              <th class="py-2.5 font-bold">Spend ($)</th>
+              <th class="py-2.5 font-bold">Last-Touch ROAS</th>
+              <th class="py-2.5 font-bold">W-Shaped ROAS</th>
+              <th class="py-2.5 font-bold">LT Bias Delta</th>
+              <th class="py-2.5 font-bold">Strategic Role</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)]">
+            <tr>
+              <td class="py-3 font-bold text-[var(--foreground)]">Paid Search</td>
+              <td class="py-3">$34,599</td>
+              <td class="py-3 font-semibold text-blue-500">24.19x</td>
+              <td class="py-3 font-extrabold text-emerald-500">29.41x</td>
+              <td class="py-3 font-bold text-blue-500">-17.7%</td>
+              <td class="py-3 text-[var(--muted-foreground)]">Primary Opp Driver & Demand Harvester</td>
+            </tr>
+            <tr>
+              <td class="py-3 font-bold text-[var(--foreground)]">Paid Social</td>
+              <td class="py-3">$30,511</td>
+              <td class="py-3 font-semibold text-red-500">0.00x</td>
+              <td class="py-3 font-extrabold text-emerald-500">3.87x</td>
+              <td class="py-3 font-bold text-red-500">-100.0%</td>
+              <td class="py-3 text-[var(--muted-foreground)]">Top-of-Funnel Discovery ($414K FT Rev)</td>
+            </tr>
+            <tr>
+              <td class="py-3 font-bold text-[var(--foreground)]">Organic SEO</td>
+              <td class="py-3">$28,151</td>
+              <td class="py-3 font-semibold text-blue-500">18.65x</td>
+              <td class="py-3 font-extrabold text-emerald-500">19.27x</td>
+              <td class="py-3 font-bold text-blue-500">-3.2%</td>
+              <td class="py-3 text-[var(--muted-foreground)]">High-Trust Inbound Foundation</td>
+            </tr>
+            <tr>
+              <td class="py-3 font-bold text-[var(--foreground)]">Webinars/Events</td>
+              <td class="py-3">$22,425</td>
+              <td class="py-3 font-semibold text-red-500">3.61x</td>
+              <td class="py-3 font-extrabold text-emerald-500">11.10x</td>
+              <td class="py-3 font-bold text-red-500">-67.5%</td>
+              <td class="py-3 text-[var(--muted-foreground)]">Mid-Funnel Education & MQL Creation</td>
+            </tr>
+            <tr>
+              <td class="py-3 font-bold text-[var(--foreground)]">Outbound BDR</td>
+              <td class="py-3">$18,525</td>
+              <td class="py-3 font-semibold text-amber-500">41.30x</td>
+              <td class="py-3 font-extrabold text-emerald-500">15.16x</td>
+              <td class="py-3 font-bold text-amber-500">+172.4%</td>
+              <td class="py-3 text-[var(--muted-foreground)]">Pipeline Closer (Overcredited by LT)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Strategic Callout Card -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm space-y-4">
+        <h3 class="text-sm font-bold text-[var(--foreground)] uppercase tracking-wider">The Last-Touch Optical Illusion</h3>
+        <div class="p-3.5 bg-red-500/10 border border-red-500/20 rounded-lg">
+          <div class="text-xs font-bold text-red-500 mb-1">Paid Social Distortion (-100%)</div>
+          <div class="text-xs text-[var(--muted-foreground)]">
+            Under Last-Touch, Paid Social generates $0 because enterprise decision-makers do not execute $120k contracts on a LinkedIn ad. Under W-Shaped, it generated <span class="font-bold text-[var(--foreground)]">$118,200</span> and seeded $414K in First-Touch discovery.
+          </div>
+        </div>
+        <div class="p-3.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">
+          <div class="text-xs font-bold text-amber-500 mb-1">Outbound BDR Inflation (+172%)</div>
+          <div class="text-xs text-[var(--muted-foreground)]">
+            BDR reps log calendar invites right before contract signature, claiming 41.3x ROAS under Last-Touch. W-Shaped proves actual contribution is <span class="font-bold text-[var(--foreground)]">15.16x</span>.
+          </div>
+        </div>
+        <div class="p-3.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+          <div class="text-xs font-bold text-emerald-500 mb-1">Paid Search Pipeline Powerhouse</div>
+          <div class="text-xs text-[var(--muted-foreground)]">
+            Delivers the highest W-Shaped ROAS at <span class="font-bold text-[var(--foreground)]">29.41x</span>, capturing both initial high-intent search and demo requests.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 2: FUNNEL LEAKAGE WATERFALL                                         -->
+  <!-- ======================================================================= -->
+  <div id="tab-funnel" class="tab-pane hidden space-y-6">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-lg font-bold text-[var(--foreground)]">Funnel Transition Gates & Lost Value Waterfall</h2>
+          <p class="text-sm text-[var(--muted-foreground)]">Tracing 1,000 accounts across 4 key transition gates to pinpoint where $36.92M in potential pipeline disappears.</p>
+        </div>
+        <div class="text-xs font-bold px-3 py-1.5 rounded-md bg-[var(--background)] border border-[var(--border)] text-[var(--muted-foreground)]">
+          Average Customer Journey: 19.8 Days | 7.6 Touches
+        </div>
+      </div>
+
+      <!-- Funnel Waterfall Graphic -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mb-6">
+        <!-- Stage 1 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-sky-500"></div>
+          <div class="text-xs font-bold text-[var(--muted-foreground)]">1. Raw Leads</div>
+          <div class="text-xl font-extrabold text-[var(--foreground)] mt-1">1,000</div>
+          <div class="text-xs text-sky-500 font-semibold mt-1">100% Inbound</div>
+          <div class="mt-3 pt-3 border-t border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">Pipeline Value</div>
+            <div class="text-sm font-bold text-[var(--foreground)]">$39.13M</div>
+          </div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+          <div class="text-xs font-bold text-[var(--muted-foreground)]">2. MQL (Marketing)</div>
+          <div class="text-xl font-extrabold text-[var(--foreground)] mt-1">535</div>
+          <div class="text-xs text-blue-500 font-semibold mt-1">53.5% Qualification</div>
+          <div class="mt-3 pt-3 border-t border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">Pipeline Value</div>
+            <div class="text-sm font-bold text-[var(--foreground)]">$20.87M</div>
+          </div>
+        </div>
+
+        <!-- Stage 3 (Primary Bottleneck) -->
+        <div class="bg-red-500/5 border-2 border-red-500/40 rounded-xl p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-red-500"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-red-500">3. SQL (Sales)</span>
+            <span class="text-[10px] font-black bg-red-500 text-white px-1.5 py-0.5 rounded">CLIFF</span>
+          </div>
+          <div class="text-xl font-extrabold text-red-500 mt-1">178</div>
+          <div class="text-xs text-red-400 font-bold mt-1">33.3% Conv (66.7% Lost)</div>
+          <div class="mt-3 pt-3 border-t border-red-500/20">
+            <div class="text-xs text-red-400 font-medium">Pipeline Value</div>
+            <div class="text-sm font-bold text-red-500">$7.25M</div>
+          </div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-indigo-500"></div>
+          <div class="text-xs font-bold text-[var(--muted-foreground)]">4. Opportunity</div>
+          <div class="text-xl font-extrabold text-[var(--foreground)] mt-1">115</div>
+          <div class="text-xs text-indigo-500 font-semibold mt-1">64.6% Discovery Conv</div>
+          <div class="mt-3 pt-3 border-t border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">Pipeline Value</div>
+            <div class="text-sm font-bold text-[var(--foreground)]">$4.66M</div>
+          </div>
+        </div>
+
+        <!-- Stage 5 -->
+        <div class="bg-emerald-500/5 border border-emerald-500/30 rounded-xl p-4 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
+          <div class="text-xs font-bold text-emerald-500">5. Closed-Won</div>
+          <div class="text-xl font-extrabold text-emerald-500 mt-1">55</div>
+          <div class="text-xs text-emerald-400 font-bold mt-1">47.8% Win Rate</div>
+          <div class="mt-3 pt-3 border-t border-emerald-500/20">
+            <div class="text-xs text-emerald-400 font-medium">Realized ARR</div>
+            <div class="text-sm font-extrabold text-emerald-500">$2.21M</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leakage Table -->
+      <div class="border border-[var(--border)] rounded-xl overflow-hidden">
+        <div class="bg-[var(--background)] px-5 py-3 border-b border-[var(--border)] text-xs font-bold uppercase tracking-wider text-[var(--foreground)]">
+          Funnel Leakage & Abandoned Pipeline Accounting
+        </div>
+        <table class="w-full text-left text-xs">
+          <thead>
+            <tr class="border-b border-[var(--border)] text-[var(--muted-foreground)] bg-[var(--card)]">
+              <th class="p-3 font-bold">Transition Gate</th>
+              <th class="p-3 font-bold">Inbound Volume</th>
+              <th class="p-3 font-bold">Conversion Rate</th>
+              <th class="p-3 font-bold">Leads Dropped</th>
+              <th class="p-3 font-bold">Lost Potential Value ($)</th>
+              <th class="p-3 font-bold">Root Cause Mechanism</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] bg-[var(--card)]">
+            <tr>
+              <td class="p-3 font-bold text-[var(--foreground)]">Gate 1: Lead -> MQL</td>
+              <td class="p-3">1,000</td>
+              <td class="p-3 font-semibold text-blue-500">53.5%</td>
+              <td class="p-3 text-[var(--muted-foreground)]">465</td>
+              <td class="p-3 font-bold text-red-500">$18,258,000</td>
+              <td class="p-3 text-[var(--muted-foreground)]">Top-of-funnel non-ICP filtering & bounce</td>
+            </tr>
+            <tr class="bg-red-500/5">
+              <td class="p-3 font-extrabold text-red-500">Gate 2: MQL -> SQL (SLA Breach)</td>
+              <td class="p-3 font-bold">535</td>
+              <td class="p-3 font-extrabold text-red-500">33.3%</td>
+              <td class="p-3 font-extrabold text-red-500">357</td>
+              <td class="p-3 font-black text-red-600">$13,620,000</td>
+              <td class="p-3 font-bold text-red-500">SDR response lag > 72h causes 54.9% drop in buyer intent</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-[var(--foreground)]">Gate 3: SQL -> Opportunity</td>
+              <td class="p-3">178</td>
+              <td class="p-3 font-semibold text-blue-500">64.6%</td>
+              <td class="p-3 text-[var(--muted-foreground)]">63</td>
+              <td class="p-3 font-bold text-red-500">$2,595,000</td>
+              <td class="p-3 text-[var(--muted-foreground)]">Discovery call disqualification / budget freeze</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-[var(--foreground)]">Gate 4: Opportunity -> Won</td>
+              <td class="p-3">115</td>
+              <td class="p-3 font-semibold text-blue-500">47.8%</td>
+              <td class="p-3 text-[var(--muted-foreground)]">60</td>
+              <td class="p-3 font-bold text-red-500">$2,451,000</td>
+              <td class="p-3 text-[var(--muted-foreground)]">Competitive loss / procurement timeline push</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 3: THE 72-HOUR SDR SLA CLIFF & ML DIAGNOSTICS                       -->
+  <!-- ======================================================================= -->
+  <div id="tab-diagnostics" class="tab-pane hidden space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- SDR Decay Interactive Graph -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-base font-bold text-[var(--foreground)]">Empirical SDR Response Decay Curve</h2>
+            <p class="text-xs text-[var(--muted-foreground)]">MQL to SQL qualification rate as a function of SDR response lag (days).</p>
+          </div>
+          <span class="px-2 py-1 text-xs font-bold rounded bg-red-500/10 text-red-500 border border-red-500/20">Cliff at 72h</span>
+        </div>
+
+        <!-- SVG Decay Plot -->
+        <svg viewBox="0 0 500 260" class="w-full h-64">
+          <!-- Grid Lines -->
+          <line x1="50" y1="210" x2="480" y2="210" stroke="var(--border)" stroke-width="1"/>
+          <line x1="50" y1="160" x2="480" y2="160" stroke="var(--border)" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="50" y1="110" x2="480" y2="110" stroke="var(--border)" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="50" y1="60" x2="480" y2="60" stroke="var(--border)" stroke-width="1" stroke-dasharray="4"/>
+
+          <!-- Y Axis Labels -->
+          <text x="40" y="214" font-size="10" fill="var(--muted-foreground)" text-anchor="end">0%</text>
+          <text x="40" y="164" font-size="10" fill="var(--muted-foreground)" text-anchor="end">25%</text>
+          <text x="40" y="114" font-size="10" fill="var(--muted-foreground)" text-anchor="end">50%</text>
+          <text x="40" y="64" font-size="10" fill="var(--muted-foreground)" text-anchor="end">75%</text>
+
+          <!-- Safe Zone & Penalty Zone -->
+          <rect x="50" y="30" width="100" height="180" fill="#10b981" fill-opacity="0.08"/>
+          <rect x="150" y="30" width="330" height="180" fill="#ef4444" fill-opacity="0.08"/>
+
+          <!-- 3.5 Day Vertical Threshold Line -->
+          <line x1="150" y1="30" x2="150" y2="210" stroke="#f97316" stroke-width="2.5" stroke-dasharray="4"/>
+          <text x="155" y="45" font-size="10" font-weight="bold" fill="#f97316">72H CLIFF (3.5 Days)</text>
+
+          <!-- Decay Curve Line -->
+          <!-- Points: (1d: 65%), (2d: 62%), (3d: 57%), (4d: 26%), (5d: 25%), (6d: 24%), (7d: 23%), (10d: 20%), (13d: 18%) -->
+          <path d="M 80 80 Q 115 88 150 96 L 180 158 Q 280 162 460 174" fill="none" stroke="#dc2626" stroke-width="3.5"/>
+          
+          <!-- Key Points -->
+          <circle cx="80" cy="80" r="5" fill="#10b981"/>
+          <text x="80" y="70" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">65%</text>
+
+          <circle cx="150" cy="96" r="5" fill="#f97316"/>
+          <text x="140" y="112" font-size="10" font-weight="bold" fill="#f97316" text-anchor="end">56.9%</text>
+
+          <circle cx="180" cy="158" r="5" fill="#dc2626"/>
+          <text x="195" y="156" font-size="10" font-weight="bold" fill="#dc2626">25.7%</text>
+
+          <!-- X Axis Labels -->
+          <text x="80" y="228" font-size="10" fill="var(--muted-foreground)" text-anchor="middle">1 Day</text>
+          <text x="150" y="228" font-size="10" fill="var(--muted-foreground)" text-anchor="middle">3 Days</text>
+          <text x="250" y="228" font-size="10" fill="var(--muted-foreground)" text-anchor="middle">7 Days</text>
+          <text x="400" y="228" font-size="10" fill="var(--muted-foreground)" text-anchor="middle">12 Days</text>
+        </svg>
+
+        <div class="mt-3 p-3 bg-[var(--background)] border border-[var(--border)] rounded-lg text-xs flex justify-between items-center">
+          <div><span class="font-bold text-emerald-500">Fast Outreach (&le; 72h):</span> 56.9% SQL Rate</div>
+          <div class="text-red-500 font-extrabold">-54.9% Decay</div>
+          <div><span class="font-bold text-red-500">Delayed Outreach (> 72h):</span> 25.7% SQL Rate</div>
+        </div>
+      </div>
+
+      <!-- ML Feature Importance & Diagnostics -->
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h2 class="text-base font-bold text-[var(--foreground)]">Machine Learning Diagnostics</h2>
+              <p class="text-xs text-[var(--muted-foreground)]">XGBoost & Random Forest Drop-off Prediction (ROC-AUC: 0.662)</p>
+            </div>
+            <span class="px-2 py-1 text-xs font-bold rounded bg-blue-500/10 text-blue-500 border border-blue-500/20">AI Classifier</span>
+          </div>
+
+          <!-- Feature Importance Bars -->
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-[var(--foreground)]">1. SDR Response Latency (sdr_response_lag_days)</span>
+                <span class="text-blue-500 font-bold">22.9% Importance</span>
+              </div>
+              <div class="w-full bg-[var(--background)] rounded-full h-2.5 overflow-hidden border border-[var(--border)]">
+                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-[var(--foreground)]">2. Customer Journey Depth (touchpoint_count)</span>
+                <span class="text-blue-500 font-bold">11.1% Importance</span>
+              </div>
+              <div class="w-full bg-[var(--background)] rounded-full h-2.5 overflow-hidden border border-[var(--border)]">
+                <div class="bg-blue-400 h-2.5 rounded-full" style="width: 48.5%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-[var(--foreground)]">3. Account Size Tier (company_size_SMB)</span>
+                <span class="text-blue-500 font-bold">11.0% Importance</span>
+              </div>
+              <div class="w-full bg-[var(--background)] rounded-full h-2.5 overflow-hidden border border-[var(--border)]">
+                <div class="bg-blue-400 h-2.5 rounded-full" style="width: 48.0%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-[var(--foreground)]">4. Channel Source: Paid Social</span>
+                <span class="text-blue-500 font-bold">10.7% Importance</span>
+              </div>
+              <div class="w-full bg-[var(--background)] rounded-full h-2.5 overflow-hidden border border-[var(--border)]">
+                <div class="bg-sky-400 h-2.5 rounded-full" style="width: 46.7%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-semibold mb-1">
+                <span class="text-[var(--foreground)]">5. Channel Source: Outbound BDR</span>
+                <span class="text-blue-500 font-bold">10.1% Importance</span>
+              </div>
+              <div class="w-full bg-[var(--background)] rounded-full h-2.5 overflow-hidden border border-[var(--border)]">
+                <div class="bg-sky-400 h-2.5 rounded-full" style="width: 44.1%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discovered Decision Rule -->
+        <div class="mt-5 p-4 bg-[var(--background)] border border-[var(--border)] rounded-xl">
+          <div class="text-xs font-bold text-[var(--foreground)] mb-1 uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Extracted Decision Tree Rule
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] font-mono">
+            IF <span class="text-amber-500">sdr_response_lag_days &le; 3.5</span> &rarr; Class: Qualified (<span class="text-emerald-500 font-bold">56.9%</span> SQL conversion)<br>
+            IF <span class="text-red-500">sdr_response_lag_days > 3.5</span> &rarr; Class: Stalled (<span class="text-red-500 font-bold">25.7%</span> SQL conversion)
+          </div>
+          <div class="text-[11px] text-[var(--muted-foreground)] mt-2">
+            Conclusion: The SDR hand-off latency is 2x more predictive of deal drop-off than channel source or deal size.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 4: INTERACTIVE PRESCRIPTIVE SCENARIO SIMULATOR                      -->
+  <!-- ======================================================================= -->
+  <div id="tab-simulator" class="tab-pane hidden space-y-6">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+      <div class="mb-6">
+        <h2 class="text-lg font-bold text-[var(--foreground)]">Prescriptive Pipeline & Revenue Simulator</h2>
+        <p class="text-sm text-[var(--muted-foreground)]">Adjust operational SLA targets and marketing budget reallocation in real time to model recoverable Closed-Won ARR.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Controls Column -->
+        <div class="lg:col-span-5 space-y-6 bg-[var(--background)] p-5 rounded-xl border border-[var(--border)]">
+          <!-- Control 1: SDR SLA -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold text-[var(--foreground)] uppercase tracking-wider">SDR Response SLA</label>
+              <span id="sla-display" class="text-xs font-extrabold px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 border border-blue-500/20">24 Hours (1 Day)</span>
+            </div>
+            <input type="range" id="slider-sla" min="1" max="14" value="1" step="1" class="w-full h-2 bg-[var(--card)] rounded-lg cursor-pointer" oninput="runLiveSimulation()">
+            <div class="flex justify-between text-[11px] text-[var(--muted-foreground)] mt-1 font-medium">
+              <span>24 Hours</span>
+              <span>72 Hours (Cliff)</span>
+              <span>7 Days</span>
+              <span>14 Days</span>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button onclick="setSlaPreset(1)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-blue-600 hover:text-white transition">24h SLA</button>
+              <button onclick="setSlaPreset(3)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-blue-600 hover:text-white transition">72h SLA</button>
+              <button onclick="setSlaPreset(7)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-blue-600 hover:text-white transition">Current (7d)</button>
+            </div>
+          </div>
+
+          <!-- Control 2: Budget Shift -->
+          <div class="pt-4 border-t border-[var(--border)]">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold text-[var(--foreground)] uppercase tracking-wider">Social &rarr; Search Budget Shift</label>
+              <span id="shift-display" class="text-xs font-extrabold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">25% Shift ($7,627)</span>
+            </div>
+            <input type="range" id="slider-shift" min="0" max="50" value="25" step="5" class="w-full h-2 bg-[var(--card)] rounded-lg cursor-pointer" oninput="runLiveSimulation()">
+            <div class="flex justify-between text-[11px] text-[var(--muted-foreground)] mt-1 font-medium">
+              <span>0% (Status Quo)</span>
+              <span>25% ($7.6K)</span>
+              <span>50% ($15.2K)</span>
+            </div>
+            <div class="flex gap-2 mt-3">
+              <button onclick="setShiftPreset(0)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-emerald-600 hover:text-white transition">0% Shift</button>
+              <button onclick="setShiftPreset(25)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-emerald-600 hover:text-white transition">25% Shift</button>
+              <button onclick="setShiftPreset(50)" class="px-2.5 py-1 text-xs rounded bg-[var(--card)] border border-[var(--border)] text-[var(--foreground)] hover:bg-emerald-600 hover:text-white transition">50% Shift</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Dashboard Column -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="p-6 bg-gradient-to-br from-emerald-500/10 via-[var(--card)] to-[var(--card)] border border-emerald-500/30 rounded-2xl">
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-500 mb-1">Simulated Realized Closed-Won Revenue</div>
+            <div class="flex items-baseline gap-4">
+              <div id="sim-revenue" class="text-4xl md:text-5xl font-black text-[var(--foreground)]">$4.52M</div>
+              <div id="sim-uplift" class="text-lg md:text-xl font-extrabold text-emerald-500">+$2.22M (+96.7%)</div>
+            </div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-2">
+              Compared to Baseline Current State revenue of <span class="font-bold text-[var(--foreground)]">$2.30M</span> (55 Closed-Won Deals).
+            </div>
+          </div>
+
+          <!-- Dynamic Funnel Output Cards -->
+          <div class="grid grid-cols-4 gap-3">
+            <div class="bg-[var(--background)] p-3 rounded-xl border border-[var(--border)] text-center">
+              <div class="text-[11px] font-semibold text-[var(--muted-foreground)]">Simulated MQLs</div>
+              <div id="sim-mqls" class="text-xl font-bold text-[var(--foreground)] mt-1">566</div>
+            </div>
+            <div class="bg-[var(--background)] p-3 rounded-xl border border-[var(--border)] text-center">
+              <div class="text-[11px] font-semibold text-[var(--muted-foreground)]">Simulated SQLs</div>
+              <div id="sim-sqls" class="text-xl font-bold text-blue-500 mt-1">369</div>
+            </div>
+            <div class="bg-[var(--background)] p-3 rounded-xl border border-[var(--border)] text-center">
+              <div class="text-[11px] font-semibold text-[var(--muted-foreground)]">Simulated Opps</div>
+              <div id="sim-opps" class="text-xl font-bold text-indigo-500 mt-1">258</div>
+            </div>
+            <div class="bg-[var(--background)] p-3 rounded-xl border border-[var(--border)] text-center">
+              <div class="text-[11px] font-semibold text-[var(--muted-foreground)]">Won Accounts</div>
+              <div id="sim-won" class="text-xl font-bold text-emerald-500 mt-1">118</div>
+            </div>
+          </div>
+
+          <!-- Comparative Scenario Summary Table -->
+          <div class="border border-[var(--border)] rounded-xl overflow-hidden text-xs">
+            <table class="w-full text-left">
+              <thead class="bg-[var(--background)] text-[var(--muted-foreground)] border-b border-[var(--border)]">
+                <tr>
+                  <th class="p-2.5 font-bold">Standard Scenario</th>
+                  <th class="p-2.5 font-bold">SQLs</th>
+                  <th class="p-2.5 font-bold">Won Deals</th>
+                  <th class="p-2.5 font-bold">ARR ($)</th>
+                  <th class="p-2.5 font-bold">Uplift ($)</th>
+                  <th class="p-2.5 font-bold">Uplift (%)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[var(--border)] bg-[var(--card)]">
+                <tr>
+                  <td class="p-2.5 font-semibold">1. Baseline Current State</td>
+                  <td class="p-2.5">189.5</td>
+                  <td class="p-2.5">59.9</td>
+                  <td class="p-2.5 font-bold">$2.30M</td>
+                  <td class="p-2.5 text-[var(--muted-foreground)]">$0</td>
+                  <td class="p-2.5 text-[var(--muted-foreground)]">0.0%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-semibold text-emerald-500">2. Enforce 24h SDR SLA</td>
+                  <td class="p-2.5">359.1</td>
+                  <td class="p-2.5">114.9</td>
+                  <td class="p-2.5 font-bold text-emerald-500">$4.47M</td>
+                  <td class="p-2.5 font-bold text-emerald-500">+$2.18M</td>
+                  <td class="p-2.5 font-bold text-emerald-500">+94.8%</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-semibold text-blue-500">3. 25% Budget Reallocation</td>
+                  <td class="p-2.5">194.8</td>
+                  <td class="p-2.5">61.0</td>
+                  <td class="p-2.5 font-bold text-blue-500">$2.34M</td>
+                  <td class="p-2.5 font-bold text-blue-500">+$37.7K</td>
+                  <td class="p-2.5 font-bold text-blue-500">+1.6%</td>
+                </tr>
+                <tr class="bg-emerald-500/5">
+                  <td class="p-2.5 font-extrabold text-emerald-600">4. Combined Strategy</td>
+                  <td class="p-2.5 font-bold">368.8</td>
+                  <td class="p-2.5 font-bold">117.5</td>
+                  <td class="p-2.5 font-black text-emerald-600">$4.52M</td>
+                  <td class="p-2.5 font-black text-emerald-600">+$2.22M</td>
+                  <td class="p-2.5 font-black text-emerald-600">+96.7%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- TAB 5: PRESCRIPTIVE 90-DAY ACTION PLAN                                  -->
+  <!-- ======================================================================= -->
+  <div id="tab-actionplan" class="tab-pane hidden space-y-6">
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-6 shadow-sm">
+      <div class="mb-6">
+        <h2 class="text-lg font-bold text-[var(--foreground)]">Executive 90-Day Implementation Roadmap</h2>
+        <p class="text-sm text-[var(--muted-foreground)]">Systematic three-pillar operational plan to capture the +$2.22M recoverable pipeline opportunity.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Pillar 1 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black text-blue-500 uppercase tracking-wider">PILLAR 1</span>
+              <span class="text-xs font-bold text-[var(--muted-foreground)]">Weeks 1–4</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-[var(--foreground)] mb-2">Automated SDR Inbound Lead Routing</h3>
+            <ul class="text-xs text-[var(--muted-foreground)] space-y-2 list-disc list-inside">
+              <li><span class="font-semibold text-[var(--foreground)]">Webhook Automation:</span> Connect form fills via CRM webhooks directly to SDR mobile & Slack queues (< 120s routing).</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Hard 24h SLA Mandate:</span> Contractual RevOps requirement for first phone/email touchpoint within 24 hours.</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Auto-Escalation Rule:</span> Leads uncontacted after 24h automatically route to senior BDR pool.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] text-xs font-bold text-emerald-500">
+            Expected ARR Impact: +$2.18M (+94.8%)
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black text-indigo-500 uppercase tracking-wider">PILLAR 2</span>
+              <span class="text-xs font-bold text-[var(--muted-foreground)]">Weeks 3–6</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-[var(--foreground)] mb-2">Attribution Governance Modernization</h3>
+            <ul class="text-xs text-[var(--muted-foreground)] space-y-2 list-disc list-inside">
+              <li><span class="font-semibold text-[var(--foreground)]">Retire Last-Touch:</span> Cease using Last-Touch for marketing budget decisions and quarterly rep bonuses.</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Adopt W-Shaped BI:</span> Implement 40% FT, 20% MQL, 40% Opp model across executive dashboards.</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Protect Top-of-Funnel:</span> Maintain Paid Social & Webinars based on verified First-Touch & Lead Creation ROAS.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] text-xs font-bold text-indigo-500">
+            Expected Impact: Eliminates $30K Misallocation
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-[var(--background)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-black text-emerald-500 uppercase tracking-wider">PILLAR 3</span>
+              <span class="text-xs font-bold text-[var(--muted-foreground)]">Weeks 5–8</span>
+            </div>
+            <h3 class="text-sm font-extrabold text-[var(--foreground)] mb-2">Budget Realignment & Search Conquesting</h3>
+            <ul class="text-xs text-[var(--muted-foreground)] space-y-2 list-disc list-inside">
+              <li><span class="font-semibold text-[var(--foreground)]">Shift $7,627 (25%):</span> Reallocate from low-intent Paid Social display ads to high-intent Paid Search keywords.</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Target Commercial Intent:</span> Bid on competitor comparison terms and bottom-funnel solution keywords.</li>
+              <li><span class="font-semibold text-[var(--foreground)]">Amplify SEO Clusters:</span> Double down on organic technical documentation driving 19.3x W-ROAS.</li>
+            </ul>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] text-xs font-bold text-emerald-500">
+            Expected ARR Impact: +$44K Compounding
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================= -->
+  <!-- JAVASCRIPT CONTROLLERS                                                  -->
+  <!-- ======================================================================= -->
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+      const tabs = ['mta', 'funnel', 'diagnostics', 'simulator', 'actionplan'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('tab-btn-' + t);
+        if (t === tabId) {
+          btn.className = "px-4 py-2 text-sm font-bold rounded-lg bg-blue-600 text-white shadow-sm transition";
+        } else {
+          btn.className = "px-4 py-2 text-sm font-semibold rounded-lg bg-[var(--card)] text-[var(--muted-foreground)] hover:text-[var(--foreground)] border border-[var(--border)] transition";
+        }
+      });
+    }
+
+    // MTA Data
+    const mtaData = [
+      { channel: 'Paid Search', spend: 34599, ft_roas: 24.19, lin_roas: 22.21, w_roas: 29.41, lt_roas: 24.19, ft_rev: 837, lin_rev: 768, w_rev: 1018, lt_rev: 837 },
+      { channel: 'Paid Social', spend: 30511, ft_roas: 13.57, lin_roas: 8.99, w_roas: 3.87, lt_roas: 0.00, ft_rev: 414, lin_rev: 274, w_rev: 118, lt_rev: 0 },
+      { channel: 'Organic SEO', spend: 28151, ft_roas: 18.97, lin_roas: 13.82, w_roas: 19.27, lt_roas: 18.65, ft_rev: 534, lin_rev: 389, w_rev: 542, lt_rev: 525 },
+      { channel: 'Webinars/Events', spend: 22425, ft_roas: 11.24, lin_roas: 11.23, w_roas: 11.10, lt_roas: 3.61, ft_rev: 252, lin_rev: 252, w_rev: 249, lt_rev: 81 },
+      { channel: 'Outbound BDR', spend: 18525, ft_roas: 9.23, lin_roas: 28.30, w_roas: 15.16, lt_roas: 41.30, ft_rev: 171, lin_rev: 524, w_rev: 281, lt_rev: 765 }
+    ];
+
+    let currentMtaMetric = 'roas';
+
+    function setMtaMetric(metric) {
+      currentMtaMetric = metric;
+      const btnRoas = document.getElementById('btn-mta-roas');
+      const btnRev = document.getElementById('btn-mta-rev');
+      if (metric === 'roas') {
+        btnRoas.className = "px-3 py-1.5 text-xs font-bold rounded-md bg-blue-600 text-white transition";
+        btnRev.className = "px-3 py-1.5 text-xs font-semibold rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition";
+      } else {
+        btnRev.className = "px-3 py-1.5 text-xs font-bold rounded-md bg-blue-600 text-white transition";
+        btnRoas.className = "px-3 py-1.5 text-xs font-semibold rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition";
+      }
+      renderMtaChart();
+    }
+
+    function renderMtaChart() {
+      const svg = document.getElementById('mta-svg');
+      svg.innerHTML = '';
+
+      const maxVal = currentMtaMetric === 'roas' ? 45 : 1100;
+      const chartWidth = 750;
+      const chartHeight = 240;
+      const originX = 50;
+      const originY = 270;
+
+      // Draw Grid Lines
+      for (let i = 0; i <= 4; i++) {
+        const yVal = (maxVal / 4) * i;
+        const yPos = originY - (yVal / maxVal) * chartHeight;
+        
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', originX);
+        line.setAttribute('y1', yPos);
+        line.setAttribute('x2', originX + chartWidth);
+        line.setAttribute('y2', yPos);
+        line.setAttribute('stroke', 'var(--border)');
+        line.setAttribute('stroke-width', '1');
+        if (i > 0) line.setAttribute('stroke-dasharray', '4');
+        svg.appendChild(line);
+
+        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        text.setAttribute('x', originX - 10);
+        text.setAttribute('y', yPos + 4);
+        text.setAttribute('font-size', '10');
+        text.setAttribute('fill', 'var(--muted-foreground)');
+        text.setAttribute('text-anchor', 'end');
+        text.textContent = currentMtaMetric === 'roas' ? `${yVal.toFixed(0)}x` : `$${yVal.toFixed(0)}K`;
+        svg.appendChild(text);
+      }
+
+      // Draw grouped bars
+      const groupWidth = chartWidth / mtaData.length;
+      const barWidth = 24;
+
+      mtaData.forEach((d, idx) => {
+        const groupCenterX = originX + idx * groupWidth + groupWidth / 2;
+        
+        const vals = currentMtaMetric === 'roas' 
+          ? [d.ft_roas, d.lin_roas, d.w_roas, d.lt_roas]
+          : [d.ft_rev, d.lin_rev, d.w_rev, d.lt_rev];
+        
+        const colors = ['#1e3a8a', '#3b82f6', '#10b981', '#ef4444'];
+
+        vals.forEach((v, vIdx) => {
+          const barHeight = (v / maxVal) * chartHeight;
+          const barX = groupCenterX - (4 * barWidth) / 2 + vIdx * barWidth;
+          const barY = originY - barHeight;
+
+          const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          rect.setAttribute('x', barX);
+          rect.setAttribute('y', barY);
+          rect.setAttribute('width', barWidth - 4);
+          rect.setAttribute('height', Math.max(1, barHeight));
+          rect.setAttribute('rx', '3');
+          rect.setAttribute('fill', colors[vIdx]);
+          svg.appendChild(rect);
+        });
+
+        // Channel Label
+        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        label.setAttribute('x', groupCenterX);
+        label.setAttribute('y', originY + 22);
+        label.setAttribute('font-size', '11');
+        label.setAttribute('font-weight', 'bold');
+        label.setAttribute('fill', 'var(--foreground)');
+        label.setAttribute('text-anchor', 'middle');
+        label.textContent = d.channel;
+        svg.appendChild(label);
+      });
+    }
+
+    // Interactive Scenario Simulator Engine
+    function setSlaPreset(val) {
+      document.getElementById('slider-sla').value = val;
+      runLiveSimulation();
+    }
+
+    function setShiftPreset(val) {
+      document.getElementById('slider-shift').value = val;
+      runLiveSimulation();
+    }
+
+    function runLiveSimulation() {
+      const slaDays = parseInt(document.getElementById('slider-sla').value);
+      const shiftPct = parseInt(document.getElementById('slider-shift').value);
+
+      // Update text displays
+      const slaText = slaDays === 1 ? "24 Hours (1 Day)" : `${slaDays} Days`;
+      document.getElementById('sla-display').textContent = slaText;
+      document.getElementById('shift-display').textContent = `${shiftPct}% Shift ($${Math.round(30511 * shiftPct / 100).toLocaleString()})`;
+
+      // Dynamic calculation
+      // Baseline: 1,000 leads, 25% Social, 30% Search, 20% SEO, 15% Webinar, 10% BDR
+      // Baseline MQLs: 550.7, baseline SQLs: 189.5, Won: 59.9, Rev: $2.30M
+      const baseLeads = 1000;
+      const shiftedLeads = Math.round(250 * (shiftPct / 100));
+      const searchLeads = 300 + shiftedLeads;
+      const socialLeads = 250 - shiftedLeads;
+      
+      const mqlCount = Math.round((searchLeads + 200) * 0.70 + (socialLeads + 150 + 100) * 0.40);
+
+      // SQL conversion rate as function of SLA:
+      // If SLA <= 3 days, sql_prob is 0.65; if > 3 days, drops smoothly down to 0.25
+      let sqlRate;
+      if (slaDays <= 3) {
+        sqlRate = 0.65 - (slaDays - 1) * 0.04; // 0.65 at 1d, 0.61 at 2d, 0.57 at 3d
+      } else {
+        sqlRate = 0.257 - (slaDays - 3.5) * 0.008; // 25.7% down to 18%
+      }
+      sqlRate = Math.max(0.18, sqlRate);
+
+      const sqlCount = Math.round(mqlCount * sqlRate);
+      const oppCount = Math.round(sqlCount * 0.70);
+      const wonCount = Math.round(oppCount * 0.45);
+
+      // Avg deal value: (0.50 * 12k + 0.35 * 45k + 0.15 * 120k) = 6k + 15.75k + 18k = $39,750
+      const revTotal = wonCount * 39750;
+      const baseRev = 2297550;
+      const revUplift = revTotal - baseRev;
+      const upliftPct = ((revUplift / baseRev) * 100);
+
+      // Update UI elements
+      document.getElementById('sim-mqls').textContent = mqlCount.toLocaleString();
+      document.getElementById('sim-sqls').textContent = sqlCount.toLocaleString();
+      document.getElementById('sim-opps').textContent = oppCount.toLocaleString();
+      document.getElementById('sim-won').textContent = wonCount.toLocaleString();
+
+      document.getElementById('sim-revenue').textContent = `$${(revTotal / 1e6).toFixed(2)}M`;
+      const sign = revUplift >= 0 ? '+' : '';
+      document.getElementById('sim-uplift').textContent = `${sign}$${(revUplift / 1e6).toFixed(2)}M (${sign}${upliftPct.toFixed(1)}%)`;
+      document.getElementById('sim-uplift').className = revUplift >= 0 
+        ? "text-lg md:text-xl font-extrabold text-emerald-500" 
+        : "text-lg md:text-xl font-extrabold text-red-500";
+    }
+
+    // Initialize on load
+    window.onload = function() {
+      renderMtaChart();
+      runLiveSimulation();
+    };
+  </script>
+</body>
+</html>
